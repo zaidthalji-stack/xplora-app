@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+  
+  <!-- Primary Meta Tags -->
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="XplorA - Your Real Estate AI Assistant" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="XplorA" />
+  <meta property="og:description" content="Your Real Estate AI Assistant" />
+  <meta property="og:site_name" content="XplorA" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="XplorA" />
+  <meta name="twitter:description" content="Your Real Estate AI Assistant" />
+  
+  <!-- Preconnect to essential domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Critical CSS -->
+  <style>
+    /* Ensure proper height behavior */
+    html, body, #root {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      background-color: #000000;
+      color: #ffffff;
+    }
+    
+    /* Basic reset and defaults */
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Improve text rendering */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      color: #ffffff;
+    }
+    
+    /* No JavaScript fallback */
+    .no-js {
+      display: none;
+    }
+    
+    html.no-js .no-js {
+      display: block;
+      padding: 20px;
+      text-align: center;
+      background-color: #000000;
+      color: #ffffff;
+    }
+    
+    /* Loading state */
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      height: 100vh;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      color: #ffffff;
+    }
+    
+    .loading-spinner {
+      position: relative;
+      width: 60px;
+      height: 60px;
+    }
+    
+    .loading-spinner svg {
+      filter: drop-shadow(0 0 10px rgba(255, 126, 0, 0.3));
+    }
+    
+    .loading-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.5px;
+    }
+    
+    /* Focus outline for accessibility */
+    *:focus {
+      outline: 2px solid #FF7E00;
+      outline-offset: 2px;
+    }
+    
+    /* Hide focus outline for mouse users */
+    *:focus:not(:focus-visible) {
+      outline: none;
+    }
+    
+    /* Ensure proper focus outline for keyboard users */
+    *:focus-visible {
+      outline: 2px solid #FF7E00;
+      outline-offset: 2px;
+    }
+    
+    /* Force dark theme for web components */
+    @media (prefers-color-scheme: dark) {
+      html, body, #root {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+      }
+    }
+    
+    /* Override any light theme defaults */
+    .expo-theme-light {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+    
+    /* Animated gradient background */
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    /* Pulsing animation for loading */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+    
+    .loading-text {
+      animation: pulse 2s ease-in-out infinite;
+    }
+  </style>
+  
+  <!-- Prevent flash of unstyled content -->
+  <script>
+    (function() {
+      document.documentElement.classList.remove('no-js');
+    })();
+  </script>
+</head>
+<body>
+  <div id="root">
+    <!-- No JavaScript fallback -->
+    <div class="no-js">
+      <h1>JavaScript Required</h1>
+      <p>Please enable JavaScript to use this application.</p>
+    </div>
+    
+    <!-- Loading state -->
+    <div class="loading" role="status" aria-label="Loading application">
+      <div class="loading-spinner">
+        <svg width="60" height="60" viewBox="0 0 60 60" stroke="#FF7E00">
+          <g fill="none" fill-rule="evenodd">
+            <g transform="translate(1 1)" stroke-width="3">
+              <circle stroke-opacity=".3" cx="29" cy="29" r="29"/>
+              <path d="M58 29c0-16.02-12.98-29-29-29">
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 29 29"
+                  to="360 29 29"
+                  dur="1s"
+                  repeatCount="indefinite"/>
+              </path>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="loading-text">Loading XplorA...</div>
+    </div>
+  </div>
+</body>
+</html>
